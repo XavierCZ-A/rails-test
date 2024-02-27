@@ -1,0 +1,23 @@
+<p style="color: green; font-weight: bold; margin-bottom: 1rem;"><%= notice %></p>
+
+<h1 class="text-3xl font-bold mb-8">Shopping List</h1>
+
+
+<div data-controller="list" class="flex flex-col items-center">
+  <%= turbo_frame_tag 'products_frame' do %>
+
+    <button data-action="click->list#toggleProductForm" data-list-target="productFormToggle" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded shadow mb-4">Add product</button>
+
+    <div data-list-target="productForm" class="hidden bg-white p-4 rounded-md shadow">
+      <%= render(ProductFormComponent.new(product: @product), id: "product_form") %>
+    </div>
+
+    <div data-list-target="productGroup" class="w-full">
+      <% @products.order(purchase_date: :asc).group_by(&:purchase_date).each do |purchase_date, products| %>
+        <%= render(GroupProductsComponent.new(purchase_date, products)) %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+

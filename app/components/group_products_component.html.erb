@@ -1,0 +1,7 @@
+
+<div class="product-group mx-auto max-w-3xl bg-blue-200 rounded-lg shadow-md p-6 mb-8 text-center">
+  <h2 class="text-2xl font-semibold mb-8"><%= @date.strftime("%B %d, %Y") %></h2>
+  <% @products.each do |product| %>
+    <%= render(ProductCardComponent.new(product: product)) %>
+  <% end %>
+</div>

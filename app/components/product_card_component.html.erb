@@ -1,0 +1,35 @@
+<div class="product-card mx-auto max-w-3xl bg-white rounded-lg shadow-md p-6 mb-8" data-target="productController.productCard" >
+  <div class="flex items-center justify-between">
+
+        <div class="mr-8">
+          <p class="font-semibold">Store Name:</p>
+          <p><%= product.store_name %></p>
+        </div>
+
+        <div class="mr-8">
+          <p class="font-semibold">Store Section:</p>
+          <p><%= product.store_section.name %></p>
+        </div>
+
+        <div class="mr-8">
+          <p class="font-semibold">Product:</p>
+          <p><%= product.name %></p>
+        </div>
+
+        <div class="mr-8">
+          <p class="font-semibold">Quantity:</p>
+          <p><%= product.quantity %></p>
+        </div>
+
+
+    <div class="w-1/4 text-right">
+      <%= form_with(model: product, local: true) do |form| %>
+        <%= form.hidden_field :purchased, value: false %>
+          <%= form.submit "Purchased", name: "purchased", class: "bg-green-500 text-white font-semibold px-4 py-2 rounded hover:bg-green-600" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
