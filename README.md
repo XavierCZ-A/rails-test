@@ -1,24 +1,41 @@
-# README
+# Prueba Ruby on Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Prueba Shopping List App
 
-Things you may want to cover:
+## Requisitos Previos
 
-* Ruby version
+- Ruby (versión 3.3.0)
+- Ruby on Rails (versión 7.1.3)
 
-* System dependencies
+## Instalación
 
-* Configuration
+1. Clona repositorio:
+```bash
+  git clone https://github.com/tu-usuario/nombre-del-repositorio.git
+```
 
-* Database creation
+2. Entra al directorio del proyecto:
+```bash
+  cd rails-test
+```
 
-* Database initialization
+3. Crear y hacer las migraciones de la base de datos
+```bash
+  rails db:create
+  rails db:migrate
+```
 
-* How to run the test suite
+3. Cargas los datos
+```bash
+  rails db:seed
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+4. Compilar assets
+```bash
+  rails tailwindcss:build
+```
 
-* Deployment instructions
-
-* ...
+5
+```bash
+  rails server
+```
