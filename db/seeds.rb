@@ -8,8 +8,8 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-StoreSection.create(name: 'carne')
-StoreSection.create(name: 'lácteos')
-StoreSection.create(name: 'panadería')
-StoreSection.create(name: 'alimentos')
-StoreSection.create(name: 'farmacia')
+StoreSection.create(name: 'Carne')
+StoreSection.create(name: 'Lácteos')
+StoreSection.create(name: 'Panadería')
+StoreSection.create(name: 'Alimentos')
+StoreSection.create(name: 'Farmacia')
