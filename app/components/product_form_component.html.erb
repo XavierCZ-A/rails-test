@@ -1,5 +1,6 @@
 <div class="flex justify-center items-center">
-    <%= form_with(model: @product, id: "product-form", url: products_path, html: { "data-turbo-frame": "product-form", class: "product-form" }) do |form| %>
+    <%= form_with(model: @product, id: "product-form", url: products_path, turbo_visit: "reload", html: { "data-turbo-frame": "product-form", class: "product-form" }) do |form| %>
+    
       <% if @product.errors.any? %>
         <div class="text-red-600 mb-4">
           <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
@@ -44,7 +45,9 @@
       </div>
 
       <div>
-        <%= form.submit "Add Product", class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full" %>
+        <%= form.hidden_field :purchased, value: false %>
+        <%= form.submit "Add Product", class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
       </div>
+
     <% end %>
 </div>

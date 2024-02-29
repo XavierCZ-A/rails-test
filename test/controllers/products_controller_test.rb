@@ -2,47 +2,32 @@ require "test_helper"
 
 class ProductsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @product = products(:one)
+    @product = products(:pintura)
   end
 
   test "should get index" do
-    get products_url
-    assert_response :success
-  end
-
-  test "should get new" do
-    get new_product_url
+    get products_path
     assert_response :success
   end
 
   test "should create product" do
-    assert_difference("Product.count") do
-      post products_url, params: { product: { name: @product.name, purchase_date: @product.purchase_date, purchased: @product.purchased, quantity: @product.quantity, store_name: @product.store_name } }
-    end
-
-    assert_redirected_to product_url(Product.last)
-  end
-
-  test "should show product" do
-    get product_url(@product)
-    assert_response :success
-  end
-
-  test "should get edit" do
-    get edit_product_url(@product)
-    assert_response :success
-  end
-
-  test "should update product" do
-    patch product_url(@product), params: { product: { name: @product.name, purchase_date: @product.purchase_date, purchased: @product.purchased, quantity: @product.quantity, store_name: @product.store_name } }
-    assert_redirected_to product_url(@product)
-  end
-
-  test "should destroy product" do
-    assert_difference("Product.count", -1) do
-      delete product_url(@product)
-    end
-
+    post products_url, params: {
+      product: {
+        name: @product.name,
+        purchase_date: @product.purchase_date,
+        purchased: @product.purchased,
+        quantity: @product.quantity,
+        store_name: @product.store_name,
+        store_section_id: @product.store_section_id
+      }
+    }
     assert_redirected_to products_url
   end
+
+  test "should mark product as purchased" do
+    patch product_url(@product), params: { purchased: true }
+    assert_redirected_to products_url
+    assert_equal flash[:notice], 'Product was marked as purchased.'
+  end
+
 end

@@ -13,10 +13,13 @@
     </div>
 
     <div data-list-target="productGroup" class="w-full">
-      <% @products.order(purchase_date: :asc).group_by(&:purchase_date).each do |purchase_date, products| %>
-        <%= render(GroupProductsComponent.new(purchase_date, products)) %>
+      <% if @products.present? %>
+        <% @products.group_by(&:purchase_date).each do |purchase_date, products| %>
+          <%= render(GroupProductsComponent.new(purchase_date, products)) %>
+        <% end %>
       <% end %>
     </div>
+
   <% end %>
 </div>
 
