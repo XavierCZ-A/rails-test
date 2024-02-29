@@ -19,23 +19,28 @@ Prueba Shopping List App
   cd rails-test
 ```
 
-3. Crear y hacer las migraciones de la base de datos
+3. Instalar las dependencias:
+```bash
+  bundle install
+```
+
+4. Crear y hacer las migraciones de la base de datos
 ```bash
   rails db:create
   rails db:migrate
 ```
 
-3. Cargas los datos
+5. Cargas los datos
 ```bash
   rails db:seed
 ```
 
-4. Compilar assets
+6. Compilar assets
 ```bash
   rails tailwindcss:build
 ```
 
-5
+7
 ```bash
   rails server
 ```
