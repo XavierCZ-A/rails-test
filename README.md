@@ -11,7 +11,7 @@ Prueba Shopping List App
 
 1. Clona repositorio:
 ```bash
-  git clone https://github.com/tu-usuario/nombre-del-repositorio.git
+  git clone https://github.com/XavierCZ-A/rails-test.git
 ```
 
 2. Entra al directorio del proyecto:
