@@ -11,36 +11,47 @@ Prueba Shopping List App
 
 1. Clona repositorio:
 ```bash
-  git clone https://github.com/XavierCZ-A/rails-test.git
+git clone https://github.com/XavierCZ-A/rails-test.git
 ```
 
 2. Entra al directorio del proyecto:
 ```bash
-  cd rails-test
+cd rails-test
 ```
 
 3. Instalar las dependencias:
 ```bash
-  bundle install
+bundle install
 ```
 
 4. Crear y hacer las migraciones de la base de datos
 ```bash
-  rails db:create
-  rails db:migrate
+rails db:create
+rails db:migrate
 ```
 
 5. Cargas los datos
 ```bash
-  rails db:seed
+rails db:seed
 ```
 
 6. Compilar assets
 ```bash
-  rails tailwindcss:build
+rails tailwindcss:build
 ```
 
 7
 ```bash
-  rails server
+rails server
+```
+
+# Ejecutar Pruebas
+Ejecutar 
+
+```bash
+rails db:migrate RAILS_ENV=test
+```
+
+```bash
+bundle exec rspec
 ```
